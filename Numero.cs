@@ -47,7 +47,10 @@ namespace Practica_1
 			return valor < ((Numero)c).getValor();
 		}
 		
-		
+		public override string ToString()
+		{
+		    return this.valor.ToString();
+		}
 		
 		
 	}

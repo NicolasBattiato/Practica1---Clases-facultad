@@ -122,8 +122,8 @@ namespace Practica_1
 		public static void informar(IColeccionable c){
 			
 			Console.WriteLine(c.cuantos());
-			Console.WriteLine(((Numero)c.minimo()).getValor());
-			Console.WriteLine(((Numero)c.maximo()).getValor());
+            Console.WriteLine(c.minimo());
+            Console.WriteLine(c.maximo());
 			
 			Console.WriteLine("Ingrese un numero: ");
 			int numero_ingresado = int.Parse(Console.ReadLine());

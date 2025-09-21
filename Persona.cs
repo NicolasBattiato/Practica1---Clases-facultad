@@ -13,10 +13,10 @@ namespace Practica_1
 	/// <summary>
 	/// Description of Persona.
 	/// </summary>
-	public class Persona : IComparable
+	public abstract class Persona : IComparable
 	{
-		private string nombre;
-		private int dni;
+		protected string nombre;
+		protected int dni;
 		
 		public Persona(string n, int d)
 		{
@@ -45,26 +45,27 @@ namespace Practica_1
 			
 		}
 		
-		public bool sosIgual(IComparable n){
+		public virtual bool sosIgual(IComparable c){
 			
-			if(nombre == ((Persona)n).getNombre()){
-				return true;
-			}
-			return false;
+			return dni == ((Persona)c).getDni();
 			
 		}
 		
-		public bool sosMenor(IComparable n){
-			return true;
+		public virtual bool sosMenor(IComparable c){
+			
+			return dni < ((Persona)c).getDni();
 		}
 		
-		public bool sosMayor(IComparable n){
+		public virtual bool sosMayor(IComparable c){
 			
-			return true;
+			return dni > ((Persona)c).getDni();
 			
 		}
 		
-		
+		public override string ToString()
+		{
+		    return string.Format("[Persona: Nombre={0}, Dni={1}]", nombre, dni);
+		}
 		
 	}
 }
